@@ -1,6 +1,7 @@
 FROM php:fpm-alpine
 
-RUN docker-php-ext-install pdo_mysql zip
+RUN apk add zlib-dev
+RUN docker-php-ext-install mysqli zip
 
 CMD ["php-fpm"]
 
